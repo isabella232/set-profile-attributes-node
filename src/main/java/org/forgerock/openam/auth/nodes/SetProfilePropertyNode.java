@@ -80,7 +80,7 @@ public class SetProfilePropertyNode extends SingleOutcomeNode {
             if (propertyValue.startsWith("\"")) {
                 result = propertyValue.substring(1,propertyValue.length()-1);
             } else if (context.sharedState.isDefined(propertyValue)) {
-                result = context.sharedState.get(propertyValue).toString();
+                result = context.sharedState.get(propertyValue).toString().replace("\"","");;
             }
             Map<String, Set> map = new HashMap<String, Set>();
             Set<String> values = new HashSet<String>();
